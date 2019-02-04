@@ -1,18 +1,46 @@
-# Test
+# Personal projects
 
-Testing github pages.
+In this page you will find a link to all my open source personal projects. They were created to fill a need that I had at the moment and could not find any existing solution out there. Some of them are abandoned, as there's no need to use them anymore.
 
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here [using GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/), select a template crafted by a designer, and publish. After your page is generated, you can check out the new `gh-pages` branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.
+### Cachet URL monitor
+This tool monitors a given set of URLs and verifies its state, including regex matching against the response body, HTTP status, and response latency. It's meant to be used along [CachetHQ](http://cachethq.io/), which is an awesome status page.
 
-### Designer Templates
-We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.
+This project is fully written in Python and it's better used with docker.
 
-### Creating pages manually
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
+[https://github.com/mtakaki/cachet-url-monitor](https://github.com/mtakaki/cachet-url-monitor)
 
-### Authors and Contributors
-You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
+### Dropwizard circuit breaker
+This is a plugin for dropwizard, that can also be use standalone, and it provides circuit-breaking functionality to your web service. It will automatically measure the rate of failures and open the circuit when it reaches a configured threshold. It differs from tenacity by being a simpler implementation, not having a distributed metric aggregation. It will only measure the rate on one instance.
 
-### Support or Contact
-Having trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[https://github.com/mtakaki/dropwizard-circuitbreaker](https://github.com/mtakaki/dropwizard-circuitbreaker)
+
+### Dropwizard HikariCP
+Provides a dropwizard bundle that allows you to use [HikariCP](https://github.com/brettwooldridge/HikariCP) as the database connection pool, replacing the default Tomcat connection pool. The README provides some benchmarking comparison, but there are more comprehensive literature out there (please see the link in the README). It was created to provide an alternative to dropwizard's default bundle.
+
+[https://github.com/mtakaki/dropwizard-hikaricp](https://github.com/mtakaki/dropwizard-hikaricp)
+
+### Dropwizard admin resource
+Another dropwizard bundle that allows you to easily register resources under the admin port. This provides you a way to create internal APIs, as your admin port should not be publicly exposed, without having to go through the whole hassle of figuring out the internal parts of dropwizard.
+
+[https://github.com/mtakaki/dropwizard-admin-resource](https://github.com/mtakaki/dropwizard-admin-resource)
+
+### Dropwizard Jodd Petite bundle
+Another dropwizard bundle that integrates [Jodd Petite](https://jodd.org/petite/), providing a extremely simple and lightweight dependency injection tool. The idea was to steer away from the industry standard Spring, which is sometimes an overkill for many microservices.
+
+[https://github.com/mtakaki/dropwizard-petite](https://github.com/mtakaki/dropwizard-petite)
+
+### Credential storage service
+Pet project from this idea of having a better way to store credentials and secrets, without having to store them in plain-text configuration files. This only works well when used with the [dropwizard hibernate bundle](https://github.com/mtakaki/CredentialStorageService-dw-hibernate). The idea is to not require providing the username and password in your configuration YAML file and it will automatically fetch the credentials from the server (which are fully encrypted) and, instead, it uses a public and private key. It also provides the ability to poll for changes and it automatically rotates the connection pool from one credential to another, all done gracefully and without dropping any requests.
+
+[https://github.com/mtakaki/CredentialStorageService](https://github.com/mtakaki/CredentialStorageService)
+
+### Dropwizard hibernate test utility
+Provides a JUnit test rule for testing hibernate DAOs, spawning an in-memory database for integration tests. It simplifies the need to write your own test harness for every unit test.
+
+[https://github.com/mtakaki/dropwizard-hibernate-test-util](https://github.com/mtakaki/dropwizard-hibernate-test-util)
+
+### Dropwizard logentries appender (abandoned)
+Dropwizard log appendar that integrates with [logentries](https://logentries.com/). It provides and out-of-the-box integration and simple configuration.
+This project has not been kept up to date, as I don't use logentries anymore.
+
+[https://github.com/mtakaki/dropwizard-logentries-appender](https://github.com/mtakaki/dropwizard-logentries-appender)
