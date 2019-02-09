@@ -10,7 +10,7 @@ This project is fully written in Python and it's better used with docker.
 [https://github.com/mtakaki/cachet-url-monitor](https://github.com/mtakaki/cachet-url-monitor)
 
 ### Dropwizard circuit breaker
-This is a plugin for dropwizard, that can also be use standalone, and it provides circuit-breaking functionality to your web service. It will automatically measure the rate of failures and open the circuit when it reaches a configured threshold. It differs from tenacity by being a simpler implementation, not having a distributed metric aggregation. It will only measure the rate on one instance.
+This is a plugin for dropwizard, that can also be used standalone, and it provides circuit-breaking functionality to your web service. It will automatically measure the rate of failures and open the circuit when it reaches a configured threshold. It differs from tenacity by being a simpler implementation, not having a distributed metric aggregation. It will only measure the rate on one instance.
 
 [https://github.com/mtakaki/dropwizard-circuitbreaker](https://github.com/mtakaki/dropwizard-circuitbreaker)
 
